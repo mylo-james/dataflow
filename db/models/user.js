@@ -5,15 +5,41 @@ module.exports = (sequelize, DataTypes) => {
         {
             name: DataTypes.STRING,
             houseId: DataTypes.INTEGER,
+            teacher: DataTypes.BOOLEAN,
         },
-        {}
+        {
+            scopes: {
+                format: {
+                    attributes: { exclude: ['createdAt', 'updatedAt'] },
+                },
+                teachers: {
+                    where: {
+                        teacher: true,
+                    },
+                },
+                students: {
+                    where: {
+                        teacher: false,
+                    },
+                },
+                house: {
+                    include: 'house',
+                    attributes: {
+                        exclude: ['houseId', 'createdAt', 'updatedAt'],
+                    },
+                },
+            },
+        }
     );
     User.associate = function (models) {
-        User.belongsTo(models.House, { foreignKey: 'houseId' });
+        User.belongsTo(models.House.scope('user'), {
+            foreignKey: 'houseId',
+            as: 'house',
+        });
         User.belongsToMany(models.Course, {
-            through: 'enrollments',
+            through: models.Enrollment,
             foreignKey: 'userId',
-            otherKey: 'courseId',
+            as: 'Enrollments',
         });
     };
     return User;

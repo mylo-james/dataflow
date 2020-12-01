@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const path = require('path');
 const bodyParser = require('body-parser');
 const { environment } = require('./config');
+const routes = require('./routes');
 const isProduction = environment === 'production';
 
 const app = express();
@@ -10,6 +11,7 @@ const app = express();
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
+app.use('/api', routes);
 
 // Catch unhandled requests and forward to error handler.
 app.use((req, res, next) => {

@@ -8,9 +8,6 @@ module.exports = (sequelize, DataTypes) => {
         },
         {}
     );
-    Enrollment.associate = function (models) {
-        Enrollment.belongsTo(models.Course, { foreignKey: { courseId } });
-        Enrollment.belongsTo(models.Course, { foreignKey: { userId } });
-    };
+    Enrollment.associate = function (models) {};
     return Enrollment;
 };

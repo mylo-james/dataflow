@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
     const Course = sequelize.define(
-        'course',
+        'Course',
         {
             name: DataTypes.STRING,
             teacherId: DataTypes.INTEGER,
@@ -9,11 +9,13 @@ module.exports = (sequelize, DataTypes) => {
         {}
     );
     Course.associate = function (models) {
-        Course.belongsTo(models.User, { foreignKey: 'teacherId' });
+        Course.belongsTo(models.User, {
+            foreignKey: 'teacherId',
+            as: 'Teacher',
+        });
         Course.belongsToMany(models.User, {
-            through: 'enrollments',
+            through: models.Enrollment,
             foreignKey: 'courseId',
-            otherKey: 'userId',
         });
     };
     return Course;

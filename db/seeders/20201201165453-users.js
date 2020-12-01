@@ -1,7 +1,7 @@
 'use strict';
 
 const numBetween = (min, max) => {
-    return Math.random() * (max - min) + min;
+    return Math.floor(Math.random() * max) + min;
 };
 
 const names = [
@@ -37,7 +37,6 @@ const names = [
     'James Monaco',
     'Jerzy Horst',
     'Jesse Lindloff',
-    'Joe Alves',
     'JM Summers',
     'Jummy Park',
     'Kimi Zou',
@@ -68,42 +67,48 @@ const students = names.map((student) => {
     return {
         name: student,
         houseId: numBetween(1, 4),
+        teacher: false,
         createdAt: new Date(),
         updatedAt: new Date(),
     };
 });
 
+const teachers = [
+    {
+        name: 'Mylo James',
+        houseId: 4,
+        teacher: true,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+    },
+    {
+        name: 'JD Richards',
+        houseId: 1,
+        teacher: true,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+    },
+    {
+        name: 'James Robertson',
+        houseId: 3,
+        teacher: true,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+    },
+    {
+        name: 'Nish Arya',
+        houseId: 2,
+        teacher: true,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+    },
+];
+
 module.exports = {
     up: (queryInterface, Sequelize) => {
         return queryInterface.bulkInsert(
             'Users',
-            [
-                {
-                    name: 'Mylo James',
-                    houseId: 4,
-                    createdAt: new Date(),
-                    updatedAt: new Date(),
-                },
-                {
-                    name: 'JD Richards',
-                    houseId: 1,
-                    createdAt: new Date(),
-                    updatedAt: new Date(),
-                },
-                {
-                    name: 'James Robertson',
-                    houseId: 3,
-                    createdAt: new Date(),
-                    updatedAt: new Date(),
-                },
-                {
-                    name: 'Nish Arya',
-                    houseId: 2,
-                    createdAt: new Date(),
-                    updatedAt: new Date(),
-                },
-                ...students,
-            ],
+            [...teachers, ...students],
             {}
         );
     },
@@ -111,6 +116,7 @@ module.exports = {
     down: (queryInterface, Sequelize) => {
         return queryInterface.bulkDelete('Users', null, {});
     },
+    students,
+    teachers,
+    numBetween,
 };
-
-module.exports = students;
