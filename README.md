@@ -3,7 +3,7 @@ Steps to get started
 1. Clone this repo
 
     ```url
-    https://github.com/mylo-james/hogwarts-aa.git
+    https://github.com/mylo-james/hogwarts-aa.git && cd hogwarts-aa
     ```
 
 2. Create a .env file and copy over the env-example file, make sure to input secret
