@@ -7,8 +7,17 @@
 //Thunks
 /*      TO DO       */
 
+// Define an intial state
+const initState = [
+    {
+        name: 'Test User',
+        houseId: 4,
+        teacher: false,
+    },
+];
+
 //Reducer
-const userReducer = (state = [], action) => {
+const userReducer = (state = initState, action) => {
     switch (action.type) {
         default:
             return state;
