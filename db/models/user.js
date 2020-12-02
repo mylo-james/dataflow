@@ -4,6 +4,12 @@ module.exports = (sequelize, DataTypes) => {
         'User',
         {
             name: DataTypes.STRING,
+            /* 
+                HufflePuff:1
+                Gryffindor: 2
+                Ravenclaw: 3
+                Slytherin: 4
+            */
             houseId: DataTypes.INTEGER,
             teacher: DataTypes.BOOLEAN,
         },
