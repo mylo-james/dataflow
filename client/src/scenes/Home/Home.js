@@ -8,6 +8,21 @@ const Home = () => {
                 <button>Hufflepuff</button>
                 <button>Ravenclaw</button>
                 <button>Slytherin</button>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <th>House</th>
+                            <th>Status</th>
+                        </tr>
+                        {/* 
+                        
+                        TO DO
+                        Map over users here 
+
+                        */}
+                    </tbody>
+                </table>
             </div>
         </div>
     );

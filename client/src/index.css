@@ -48,3 +48,18 @@ h3 {
     z-index: -6;
     opacity: 0.2;
 }
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+table {
+    margin: 20px auto;
+    min-width: 450px;
+}
+
+td {
+    text-align: center;
+}
