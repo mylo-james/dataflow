@@ -1,16 +1,23 @@
+//Library Imports
 const express = require('express');
 const morgan = require('morgan');
-const path = require('path');
 const bodyParser = require('body-parser');
+
+//Module Imports
 const { environment } = require('./config');
 const routes = require('./routes');
+
+//Definitions
 const isProduction = environment === 'production';
 
+// App Definition
 const app = express();
 
+//Middleware
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
+// Routes
 app.use('/api', routes);
 
 // Catch unhandled requests and forward to error handler.

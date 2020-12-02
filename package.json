@@ -1,5 +1,5 @@
 {
-    "name": "dataflow",
+    "name": "hogwarts",
     "version": "1.0.0",
     "description": "",
     "main": "app.js",
@@ -8,6 +8,8 @@
         "start": "per-env",
         "start:development": "nodemon -r dotenv/config ./bin/www",
         "start:production": "./bin/www",
+        "createDB": "npx dotenv sequelize db:create && npx dotenv sequelize db:migrate && npx dotenv sequelize db:seed:all",
+        "dropDB": "npx dotenv sequelize db:drop",
         "reseed": "npx dotenv sequelize db:drop && npx dotenv sequelize db:create && npx dotenv sequelize db:migrate && npx dotenv sequelize db:seed:all",
         "test": "echo \"Error: no test specified\" && exit 1"
     },

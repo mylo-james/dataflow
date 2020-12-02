@@ -9,9 +9,6 @@ module.exports = (sequelize, DataTypes) => {
         },
         {
             scopes: {
-                format: {
-                    attributes: { exclude: ['createdAt', 'updatedAt'] },
-                },
                 teachers: {
                     where: {
                         teacher: true,
