@@ -8,7 +8,7 @@ const { environment } = require('./config');
 const routes = require('./routes');
 
 //Definitions
-const isProduction = environment === 'production';
+const inProduction = environment === 'production';
 
 // App Definition
 const app = express();
@@ -35,7 +35,7 @@ app.use((err, req, res, next) => {
         title: err.title || 'Server Error',
         message: err.message,
         errors: err.errors,
-        stack: isProduction ? null : err.stack,
+        stack: inProduction ? null : err.stack,
     });
 });
 
