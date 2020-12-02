@@ -16,7 +16,7 @@ const rootReducer = combineReducers({
 // Allow Redux tools
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-// Apply Thunk middleware
+// Apply middleware
 const storeEnhancer = composeEnhancers(applyMiddleware(thunk, logger));
 
 // Define Store

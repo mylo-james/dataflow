@@ -5,8 +5,8 @@ module.exports = (sequelize, DataTypes) => {
         {
             name: DataTypes.STRING,
             /* 
-                HufflePuff:1
-                Gryffindor: 2
+                Gryffindor: 1    
+                HufflePuff: 2
                 Ravenclaw: 3
                 Slytherin: 4
             */

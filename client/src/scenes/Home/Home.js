@@ -4,8 +4,8 @@ const Home = () => {
             <h1>Welcome to Hogwarts</h1>
             <h3>Let's get sorted!</h3>
             <div className='buttons'>
-                <button>Hufflepuff</button>
                 <button>Gryffindor</button>
+                <button>Hufflepuff</button>
                 <button>Ravenclaw</button>
                 <button>Slytherin</button>
             </div>
