@@ -1,7 +1,7 @@
 PORT=5000
-DB_USERNAME=dataflow_dev
+DB_USERNAME=hogwarts_dev
 DB_PASSWORD=password
-DB_DATABASE=dataflow
+DB_DATABASE=hogwarts
 DB_HOST=localhost
 JWT_SECRET=<<Insert Secret Here>>
 JWT_EXPIRES_IN=604800
