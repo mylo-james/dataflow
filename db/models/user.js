@@ -35,11 +35,6 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'houseId',
             as: 'house',
         });
-        User.belongsToMany(models.Course, {
-            through: models.Enrollment,
-            foreignKey: 'userId',
-            as: 'Enrollments',
-        });
     };
     return User;
 };
