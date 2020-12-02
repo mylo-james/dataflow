@@ -1,14 +1,11 @@
-const express = require('express');
+//Define router
+const router = require('express').Router();
+
+//Import Routers
 const userRoutes = require('./userRoutes');
-const houseRoutes = require('./houseRoutes');
-const courseRoutes = require('./courseRoutes');
-const enrollmentRoutes = require('./enrollmentRoutes');
 
-const router = express.Router();
-
+// Use Routers
 router.use('/users', userRoutes);
-router.use('/houses', houseRoutes);
-router.use('/courses', courseRoutes);
-router.use('/enrollments', enrollmentRoutes);
 
+// Export Router
 module.exports = router;
