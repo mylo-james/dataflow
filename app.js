@@ -3,7 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
-//Module Imports
+//Relative Imports
 const { environment } = require('./config');
 const routes = require('./routes');
 
