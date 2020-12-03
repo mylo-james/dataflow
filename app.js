@@ -1,8 +1,9 @@
 //Library Imports
 const express = require('express');
+const cors = require('cors');
+const helmet = require('helmet');
 const morgan = require('morgan');
-const bodyParser = require('body-parser');
-
+const createError = require('http-errors');
 //Relative Imports
 const { environment } = require('./config');
 const routes = require('./routes');
@@ -14,28 +15,28 @@ const inProduction = environment === 'production';
 const app = express();
 
 //Middleware
+app.use(cors({ origin: true }));
+app.use(helmet({ hsts: false }));
 app.use(morgan('dev'));
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 // Routes
 app.use('/api', routes);
 
-// Catch unhandled requests and forward to error handler.
-app.use((req, res, next) => {
-    const err = new Error("The requested resource couldn't be found.");
-    err.status = 404;
-    err.errors = ['Could not find string of resource'];
-    next(err);
+// catch 404 and forward to error handler
+app.use(function (_req, _res, next) {
+    next(createError(404));
 });
 
-// Generic error handler.
-app.use((err, req, res, next) => {
+app.use(function (err, _req, res, _next) {
     res.status(err.status || 500);
+    if (err.status === 401) {
+        res.set('WWW-Authenticate', 'Bearer');
+    }
     res.json({
-        title: err.title || 'Server Error',
         message: err.message,
-        errors: err.errors,
-        stack: inProduction ? null : err.stack,
+        error: JSON.parse(JSON.stringify(err)),
     });
 });
 

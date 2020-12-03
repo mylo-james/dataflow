@@ -1,12 +1,9 @@
 // Define Router
 const router = require('express').Router();
-
-// Module Imports
-const { asyncHandler, handleValidationErrors } = require('../utils');
+// Imports
+const asyncHandler = require('express-async-handler');
 
 // Endpoint Definitions
-
-/*        TO DO        */
 
 // Export Router
 module.exports = router;
