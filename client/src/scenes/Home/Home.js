@@ -12,6 +12,7 @@ const Home = () => {
             <table>
                 <tbody>
                     <tr>
+                        <th>#</th>
                         <th>Name</th>
                         <th>House</th>
                         <th>Status</th>

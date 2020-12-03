@@ -10,6 +10,7 @@
 // Define an intial state
 const initState = [
     {
+        id: 0,
         name: 'Test User',
         houseId: 4,
         teacher: false,
