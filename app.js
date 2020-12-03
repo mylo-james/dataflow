@@ -1,7 +1,7 @@
 //Library Imports
 const express = require('express');
 const cors = require('cors');
-const helmet = require('helmet');
+
 const morgan = require('morgan');
 const createError = require('http-errors');
 //Relative Imports
@@ -16,7 +16,7 @@ const app = express();
 
 //Middleware
 app.use(cors({ origin: true }));
-app.use(helmet({ hsts: false }));
+
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
