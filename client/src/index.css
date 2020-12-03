@@ -28,8 +28,11 @@ body * {
     z-index: 1;
 }
 
-button {
-    margin: 0 20px;
+.buttons {
+    height: 30px;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
 }
 
 h1 {
