@@ -1,15 +1,12 @@
 //Library Imports
 const express = require('express');
 const cors = require('cors');
-
+const asyncHandler = require('express-async-handler');
 const morgan = require('morgan');
 const createError = require('http-errors');
-//Relative Imports
-const { environment } = require('./config');
-const routes = require('./routes');
 
-//Definitions
-const inProduction = environment === 'production';
+//Relative Imports
+const { User } = require('./db/models');
 
 // App Definition
 const app = express();
@@ -21,8 +18,9 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Routes
-app.use('/api', routes);
+
+// Define Routes   
+/*   TO DO     */
 
 // catch 404 and forward to error handler
 app.use(function (_req, _res, next) {

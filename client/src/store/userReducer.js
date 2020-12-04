@@ -9,12 +9,11 @@
 
 // Define an intial state
 const initState = [
-    {
-        id: 0,
-        name: 'Test User',
-        houseId: 4,
-        teacher: false,
-    },
+    /* TO DO
+    
+    What do I want my state shape to look like? 
+    
+    */
 ];
 
 //Reducer

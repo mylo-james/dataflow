@@ -48,3 +48,7 @@ Steps to get started
     ```
 
 5. Review the app's structure
+
+### Dataflow IMG
+
+![dataflow](./dataflow.png)

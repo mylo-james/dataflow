@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
                 */
                 user: {
                     attributes: {
-                        exclude: ['animal','createdAt', 'updatedAt'],
+                        exclude: ['animal', 'createdAt', 'updatedAt'],
                     },
                 },
             },
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     );
     House.associate = function (models) {
         // A house has many users
-        House.hasMany(models.User, { foreignKey: 'houseId' });
+        House.hasMany(models.User, { foreignKey: 'houseId', scope: 'user' });
     };
     return House;
 };
