@@ -1,11 +1,11 @@
 // Action Type Definitions
-/*********** TO DO 10 *************/
+/*********** TO DO 11 *************/
 
 //Action Creators
-/*********** TO DO 9 *************/
+/*********** TO DO 10 *************/
 
 //Thunks
-/*********** TO DO 6 & 8 *************/
+/*********** TO DO 7 & 9 *************/
 
 // Define an intial state
 const initState = [
@@ -15,7 +15,7 @@ const initState = [
 //Reducer
 const userReducer = (state = initState, action) => {
     switch (action.type) {
-        /*********** TO DO 11 *************/
+        /*********** TO DO 12 *************/
 
         default:
             return state;
