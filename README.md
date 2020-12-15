@@ -37,13 +37,13 @@ Steps to get started
     Run in first terminal
 
     ```bash
-    npm install && npm run createDB && clear && npm start
+    cd backend && npm install && npm run createDB && clear && npm start
     ```
 
     Run in third terminal
 
     ```bash
-    cd client && npm install && npm start
+    cd frontend && npm install && npm start
 
     ```
 

@@ -17,9 +17,19 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-
 // Define Routes
-/*   TO DO     */
+app.get(
+    '/api/users/house/:id',
+    asyncHandler(async (req, res) => {
+        const id = req.params.id;
+        const users = await User.findAll({
+            where: {
+                houseId: id,
+            },
+        });
+        res.json(users);
+    })
+);
 
 // catch 404 and forward to error handler
 app.use(function (_req, _res, next) {

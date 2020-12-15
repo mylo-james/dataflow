@@ -6,13 +6,12 @@ const numBetween = (min, max) => {
 
 const names = [
     'Adam Faidy',
+    'Adam Jacobson',
     'Ahdari Scott',
     'Ameera Gates',
-    'Andrew Cohen',
     'Andrew Dotterer',
     'Angelica Wilson',
     'Anna Bullard',
-    'Antara Jaima',
     'Arianna Johnson',
     'Arjun Narain',
     'Autumn Wiggins',
@@ -36,13 +35,14 @@ const names = [
     'Jacob Premo',
     'James Monaco',
     'Jerzy Horst',
-    'Jesse Lindloff',
+    'Joe Alves',
     'JM Summers',
     'Jummy Park',
+    'Ashley Gant',
     'Kimi Zou',
     'Kristen Florey',
     'Lane Smit',
-    'Matthew Hasan',
+    'Mike Jensen',
     'Michael Sanford',
     'Mishe Yi',
     'Mustafa Mousa',
@@ -53,6 +53,7 @@ const names = [
     'Ramses Romero',
     'Rihana Chang',
     'Ryan Webster',
+    'Safiya Cain',
     'Sami Butler',
     'Samuel Nunn',
     'Seth Witfoth',
@@ -60,7 +61,6 @@ const names = [
     'Thanh Nguyen',
     'Tony Ngo',
     'Ty Newman',
-    'William Vincent',
 ];
 
 const students = names.map((student) => {
