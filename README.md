@@ -53,12 +53,12 @@ Steps to get started
 
 ![dataflow](./dataflow.png)
 
-1. Write your inital state
+1. Write your initial state
 2. Import useSelector from 'react-redux'
-3. Initalize useSelector
+3. Initialize useSelector
 4. Render information from the store
 5. In the handleClick, dispatch a thunk `(TBD)`
-6. Import and initalize useDispatch from 'react-redux'
+6. Import and initialize useDispatch from 'react-redux'
 7. Define a thunk to hit a backend route `(TBD)`
 8. Define a backend route to query the backend
 9. Dispatch an action creator `(TBD)` passing the info from the backend
