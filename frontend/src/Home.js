@@ -1,14 +1,11 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { getUsersByHouse } from './store/userReducer';
-const Home = () => {
-    const users = useSelector((state) => state.users);
-    const dispatch = useDispatch();
+/*********** TO DO *************/
 
-    console.log(users);
+const Home = () => {
+    /*********** TO DO *************/
 
     const handleClick = (e) => {
-        const id = e.target.id;
-        dispatch(getUsersByHouse(id));
+        /*********** TO DO *************/
+        console.log(e.target.id);
     };
 
     return (
@@ -37,14 +34,7 @@ const Home = () => {
                         <th>House</th>
                         <th>Status</th>
                     </tr>
-                    {users.map((user) => (
-                        <tr key={user.id}>
-                            <td>{user.id}</td>
-                            <td>{user.name}</td>
-                            <td>{user.houseId}</td>
-                            <td>{user.teacher ? 'Teacher' : 'Student'}</td>
-                        </tr>
-                    ))}
+                    {/*********** TO DO *************/}
                 </tbody>
             </table>
         </div>

@@ -18,18 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Define Routes
-app.get(
-    '/api/users/house/:id',
-    asyncHandler(async (req, res) => {
-        const id = req.params.id;
-        const users = await User.findAll({
-            where: {
-                houseId: id,
-            },
-        });
-        res.json(users);
-    })
-);
+/*********** TO DO *************/
 
 // catch 404 and forward to error handler
 app.use(function (_req, _res, next) {
