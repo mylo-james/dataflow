@@ -34,7 +34,7 @@ Steps to get started
 
 4. Split terminals to have 3 terminals
 
-    Run in first terminal
+    Run in first terminal (make sure Postbird is closed)
 
     ```bash
     cd backend && npm install && npm run createDB && clear && npm start
