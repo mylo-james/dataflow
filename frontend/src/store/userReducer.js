@@ -7,7 +7,7 @@
 //Thunks
 /*********** TO DO 7 & 9 *************/
 
-// Define an intial state
+// Define an initial state
 const initState = [
     /*********** TO DO 1 *************/
 ];
