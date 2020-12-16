@@ -6,7 +6,7 @@ Steps to get started
     git clone https://github.com/mylo-james/hogwarts-aa.git && cd hogwarts-aa
     ```
 
-2. Create a .env file and copy over the env-example file, make sure to input secret
+2. Create a .env file in your backend and copy over the env-example file, make sure to input secret
 
     ```text
     PORT=5000
