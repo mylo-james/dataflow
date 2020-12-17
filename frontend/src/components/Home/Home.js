@@ -1,13 +1,12 @@
-/*********** TO DO 2 *************/
-/*********** TO DO 6 *************/
+import { useSelector, useDispatch } from 'react-redux';
+import { getUsersByHouse } from '../../store/userReducer';
 
 const Home = () => {
-    /*********** TO DO 3 *************/
-    /*********** TO DO 6 *************/
+    const users = useSelector((state) => state.users);
+    const dispatch = useDispatch();
 
     const handleClick = (e) => {
-        /*********** TO DO 5 *************/
-        console.log(e.target.id);
+        dispatch(getUsersByHouse(e.target.id));
     };
 
     return (
@@ -36,7 +35,14 @@ const Home = () => {
                         <th>House</th>
                         <th>Status</th>
                     </tr>
-                    {/*********** TO DO 4 *************/}
+                    {users.map((user) => (
+                        <tr key={user.id}>
+                            <td>{user.id}</td>
+                            <td>{user.name}</td>
+                            <td>{user.House.name}</td>
+                            <td>{user.teacher ? 'Teacher' : 'Student'}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>
