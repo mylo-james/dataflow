@@ -1,10 +1,14 @@
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 
 function App() {
     return (
         <BrowserRouter>
-            <Home />
+            <Switch>
+                <Route path='*'>
+                    <Home />
+                </Route>
+            </Switch>
         </BrowserRouter>
     );
 }

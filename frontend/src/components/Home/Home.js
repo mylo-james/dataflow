@@ -1,18 +1,20 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { NavLink, Route } from 'react-router-dom';
+import { NavLink, Route, useHistory } from 'react-router-dom';
 import { getInstructors } from '../../store/instructorReducer';
 import UserTable from '../UserTable';
 
 const Home = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const instructorObj = useSelector(({ instructors }) => instructors);
     const instructors = Object.values(instructorObj);
 
     useEffect(() => {
         dispatch(getInstructors());
-    }, [dispatch]);
+        history.push('/instructors/1');
+    }, [dispatch, history]);
 
     return (
         <div className='home'>

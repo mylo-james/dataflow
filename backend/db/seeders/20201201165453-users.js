@@ -1,5 +1,5 @@
 'use strict';
-
+const faker = require('faker');
 const names = [
     'Adam Faidy',
     'Adam Jacobson',
@@ -82,9 +82,24 @@ function shuffle(array) {
 }
 
 const students = shuffle(names).map((student, i) => {
+    let word1 = faker.random.word();
+    let word2 = faker.random.word();
+
+    word1 = word1[0].toUpperCase() + word1.slice(1);
+    word2 = word2[0].toUpperCase() + word2.slice(1);
+
     return {
         name: student,
         instructorId: (i % instructors.length) + 1,
+        projectName: `${word1}${word2}`,
+        liveLink: faker.random.boolean()
+            ? `https://${word1}${word2}.herokuapp.com`
+            : null,
+        repoLink: faker.random.boolean()
+            ? `https://github.com/${student
+                  .split(' ')
+                  .join('-')}/${word1}${word2}`
+            : null,
     };
 });
 

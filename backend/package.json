@@ -20,6 +20,7 @@
         "cors": "^2.8.5",
         "express": "^4.17.1",
         "express-async-handler": "^1.1.4",
+        "faker": "^5.1.0",
         "helmet": "^4.2.0",
         "morgan": "^1.10.0",
         "node-fetch": "^2.6.1",
