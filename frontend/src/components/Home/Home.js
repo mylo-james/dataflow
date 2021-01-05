@@ -1,44 +1,37 @@
-/*********** TO DO 2 *************/
-/*********** TO DO 6 *************/
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { NavLink, Route } from 'react-router-dom';
+import { getInstructors } from '../../store/instructorReducer';
+import UserTable from '../UserTable';
 
 const Home = () => {
-    /*********** TO DO 3 *************/
-    /*********** TO DO 6 *************/
+    const dispatch = useDispatch();
 
-    const handleClick = (e) => {
-        /*********** TO DO 5 *************/
-        console.log(e.target.id);
-    };
+    const instructorObj = useSelector(({ instructors }) => instructors);
+    const instructors = Object.values(instructorObj);
+
+    useEffect(() => {
+        dispatch(getInstructors());
+    }, [dispatch]);
 
     return (
         <div className='home'>
-            <h1>Welcome to Hogwarts</h1>
-            <h3>Let's get sorted!</h3>
+            <h1>First Solo Project</h1>
+            <h3>Let's GO!!</h3>
             <div className='buttons'>
-                <button id='1' onClick={handleClick}>
-                    Gryffindor
-                </button>
-                <button id='2' onClick={handleClick}>
-                    Hufflepuff
-                </button>
-                <button id='3' onClick={handleClick}>
-                    Ravenclaw
-                </button>
-                <button id='4' onClick={handleClick}>
-                    Slytherin
-                </button>
+                {instructors.map(({ id, name }) => (
+                    <NavLink
+                        key={`instructorId-${id}-${name}`}
+                        id={id}
+                        to={`/instructors/${id}`}
+                    >
+                        {name}
+                    </NavLink>
+                ))}
             </div>
-            <table>
-                <tbody>
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>House</th>
-                        <th>Status</th>
-                    </tr>
-                    {/*********** TO DO 4 *************/}
-                </tbody>
-            </table>
+            <Route path='/instructors/:instructorId'>
+                <UserTable />
+            </Route>
         </div>
     );
 };

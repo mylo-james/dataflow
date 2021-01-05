@@ -7,10 +7,12 @@ import logger from 'redux-logger';
 
 //Reducers
 import userReducer from './userReducer';
+import instructorsReducer from './instructorReducer';
 
 //Combines Reducers into one reducer
 const rootReducer = combineReducers({
     users: userReducer,
+    instructors: instructorsReducer,
 });
 
 let enhancer;

@@ -1,18 +1,18 @@
-Steps to get started
+# Steps to get started
 
 1. Clone this repo
 
     ```url
-    git clone https://github.com/mylo-james/hogwarts-aa.git && cd hogwarts-aa
+    git clone https://github.com/mylo-james/dataflow.git && cd dataflow
     ```
 
 2. Create a .env file **_in your backend_** and copy over the env-example file, make sure to input secret
 
     ```text
     PORT=5000
-    DB_USERNAME=hogwarts_dev
+    DB_USERNAME=dataflow_dev
     DB_PASSWORD=password
-    DB_DATABASE=hogwarts
+    DB_DATABASE=dataflow
     DB_HOST=localhost
     JWT_SECRET=<<Insert Secret Here>>
     JWT_EXPIRES_IN=604800
@@ -25,7 +25,7 @@ Steps to get started
     ```
 
     ```bash
-    CREATE USER hogwarts_dev WITH PASSWORD 'password' CREATEDB;
+    CREATE USER dataflow_dev WITH PASSWORD 'password' CREATEDB;
     ```
 
     ```bash
@@ -49,7 +49,7 @@ Steps to get started
 
 5. Review the app's structure
 
-### Dataflow IMG
+## Dataflow IMG
 
 ![dataflow](./dataflow.png)
 

@@ -1,22 +1,40 @@
+import _ from 'lodash';
 // Action Type Definitions
-/*********** TO DO 11 *************/
+const SET_USERS = 'users/SET_USERS';
 
 //Action Creators
-/*********** TO DO 10 *************/
+const setUsers = (payload) => ({
+    type: SET_USERS,
+    payload,
+});
 
 //Thunks
-/*********** TO DO 7 & 9 *************/
+export const getUsersByInstructor = (id) => async (dispatch) => {
+    const res = await fetch(`/api/users/instructors/${id}`);
+    const users = await res.json();
+    console.log(users);
+    dispatch(setUsers(users));
+};
 
 // Define an initial state
-const initState = [
-    /*********** TO DO 1 *************/
-];
+const initState = {
+    1: {
+        id: 1,
+        name: 'Student',
+        instructorId: 4,
+        projectName: 'SafeSpace',
+        projectRepoLink: 'https://github.com/mylo-james/dataflow',
+        projectLiveLink: 'https://safespace-mjames.herokuapp.com/',
+    },
+};
 
 //Reducer
 const userReducer = (state = initState, action) => {
     switch (action.type) {
-        /*********** TO DO 12 *************/
-
+        case SET_USERS:
+            let newState = _.mapKeys(action.payload, 'id');
+            console.log(newState);
+            return newState;
         default:
             return state;
     }
