@@ -4,21 +4,19 @@ module.exports = (sequelize, DataTypes) => {
         'User',
         {
             name: DataTypes.STRING,
-            /* 
-                Gryffindor: 1    
-                HufflePuff: 2
-                Ravenclaw: 3
-                Slytherin: 4
-            */
-            houseId: DataTypes.INTEGER,
-            teacher: DataTypes.BOOLEAN,
+            instructorId: DataTypes.INTEGER,
+            projectName: DataTypes.STRING,
+            liveLink: DataTypes.STRING,
+            repoLink: DataTypes.STRING,
+            createdAt: DataTypes.DATE,
+            updatedAt: DataTypes.DATE,
         },
         {}
     );
     User.associate = function (models) {
-        // A user belongs to a house
-        User.belongsTo(models.House, {
-            foreignKey: 'houseId',
+        // A user belongs to a instructor
+        User.belongsTo(models.Instructor, {
+            foreignKey: 'instructorId',
         });
     };
     return User;

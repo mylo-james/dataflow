@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const createError = require('http-errors');
 
 //Relative Imports
-const { User, House } = require('./db/models');
+const { User, Instructor } = require('./db/models');
 
 // App Definition
 const app = express();
@@ -18,7 +18,22 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Define Routes
-/*********** TO DO 8 *************/
+app.get(
+    '/api/users/instructors/:id',
+    asyncHandler(async (req, res) => {
+        const { id } = req.params;
+        const users = await User.findAll({ where: { instructorId: id } });
+        res.json(users);
+    })
+);
+
+app.get(
+    '/api/instructors',
+    asyncHandler(async (req, res) => {
+        const instructors = await Instructor.findAll();
+        res.json(instructors);
+    })
+);
 
 // catch 404 and forward to error handler
 app.use(function (_req, _res, next) {
