@@ -18,6 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Define Routes
+
 app.get(
     '/api/users/instructors/:id',
     asyncHandler(async (req, res) => {

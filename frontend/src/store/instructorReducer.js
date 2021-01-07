@@ -1,9 +1,8 @@
-import _ from 'lodash';
 // Action Type Definitions
 const SET_INSTRUCTORS = 'instructors/SET_INSTRUCTORS';
 
 //Action Creators
-const setInstructors = (payload) => ({
+export const setInstructors = (payload) => ({
     type: SET_INSTRUCTORS,
     payload,
 });
@@ -16,18 +15,17 @@ export const getInstructors = () => async (dispatch) => {
 };
 
 // Define an initial state
-const initState = {
-    1: {
-        id: 1,
-        name: 'James',
-    },
-};
+const initState = {};
 
 //Reducer
 const instructorsReducer = (state = initState, action) => {
+    const newState = Object.assign({}, state);
     switch (action.type) {
         case SET_INSTRUCTORS:
-            return _.mapKeys(action.payload, 'id');
+            action.payload.forEach(
+                (instructor) => (newState[instructor.id] = instructor)
+            );
+            return newState;
         default:
             return state;
     }

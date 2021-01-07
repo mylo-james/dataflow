@@ -1,25 +1,22 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { NavLink, Route, useHistory } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
 import { getInstructors } from '../../store/instructorReducer';
 import UserTable from '../UserTable';
 
 const Home = () => {
     const dispatch = useDispatch();
-    const history = useHistory();
 
-    const instructorObj = useSelector(({ instructors }) => instructors);
-    const instructors = Object.values(instructorObj);
+    const { instructors } = useSelector(({ instructors }) => ({
+        instructors: Object.values(instructors),
+    }));
 
     useEffect(() => {
         dispatch(getInstructors());
-        history.push('/instructors/1');
-    }, [dispatch, history]);
+    }, [dispatch]);
 
     return (
         <div className='home'>
-            <h1>First Solo Project</h1>
-            <h3>Let's GO!!</h3>
             <div className='buttons'>
                 {instructors.map(({ id, name }) => (
                     <NavLink
