@@ -1,3 +1,4 @@
+/* No need to open this file for lecture. */
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { StrictMode } from 'react';

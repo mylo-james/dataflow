@@ -1,12 +1,12 @@
+/* No need to open this file for lecture. */
 //Library Imports
 const express = require('express');
 const cors = require('cors');
-const asyncHandler = require('express-async-handler');
 const morgan = require('morgan');
 const createError = require('http-errors');
 
 //Relative Imports
-const { User, Instructor } = require('./db/models');
+const routes = require('./routes');
 
 // App Definition
 const app = express();
@@ -18,23 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Define Routes
-
-app.get(
-    '/api/groups/:id',
-    asyncHandler(async (req, res) => {
-        const { id } = req.params;
-        const users = await User.findAll({ where: { instructorId: id } });
-        res.json(users);
-    })
-);
-
-app.get(
-    '/api/instructors',
-    asyncHandler(async (req, res) => {
-        const instructors = await Instructor.findAll();
-        res.json(instructors);
-    })
-);
+app.use(routes);
 
 // catch 404 and forward to error handler
 app.use(function (_req, _res, next) {

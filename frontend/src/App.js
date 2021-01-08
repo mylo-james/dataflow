@@ -1,3 +1,4 @@
+/* No need to open this file for lecture. */
 import { useEffect } from 'react';
 import { Route, Switch, useHistory, useLocation } from 'react-router-dom';
 import Home from './components/Home';
@@ -11,6 +12,7 @@ function App() {
             history.push('groups/1');
         }
     }, [pathname, history]);
+
     return (
         <>
             <div className='header'>
