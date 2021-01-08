@@ -47,7 +47,7 @@
 
     ```
 
-5. Review the app's structure
+5. Review the app's structure and follow the [Dataflow Cheat Sheet](https://github.com/mylo-james/dataflow-cheatsheet/wiki)
 
 ## Dataflow IMG
 

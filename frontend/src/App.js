@@ -8,7 +8,7 @@ function App() {
 
     useEffect(() => {
         if (pathname === '/') {
-            history.push('instructors/1');
+            history.push('groups/1');
         }
     }, [pathname, history]);
     return (

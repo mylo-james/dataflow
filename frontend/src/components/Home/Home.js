@@ -22,13 +22,13 @@ const Home = () => {
                     <NavLink
                         key={`instructorId-${id}-${name}`}
                         id={id}
-                        to={`/instructors/${id}`}
+                        to={`/groups/${id}`}
                     >
                         {name}
                     </NavLink>
                 ))}
             </div>
-            <Route path='/instructors/:instructorId'>
+            <Route path='/groups/:instructorId'>
                 <UserTable />
             </Route>
         </div>

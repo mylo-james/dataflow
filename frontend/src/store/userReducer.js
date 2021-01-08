@@ -9,9 +9,8 @@ export const setUsers = (payload) => ({
 
 //Thunks
 export const getUsersByInstructor = (id) => async (dispatch) => {
-    const res = await fetch(`/api/users/instructors/${id}`);
+    const res = await fetch(`/api/groups/${id}`);
     const users = await res.json();
-
     dispatch(setUsers(users));
 };
 

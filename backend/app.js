@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 // Define Routes
 
 app.get(
-    '/api/users/instructors/:id',
+    '/api/groups/:id',
     asyncHandler(async (req, res) => {
         const { id } = req.params;
         const users = await User.findAll({ where: { instructorId: id } });
