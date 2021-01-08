@@ -1,8 +1,8 @@
+# Dataflow Cheatsheet
+
 ## Dataflow Graphic
 
-[Dataflow Cheat Sheet](https://github.com/mylo-james/dataflow-cheatsheet/wiki)
-
-## Feature-Based Development Flow
+[Dataflow Cheat Sheet](update/to/graphic)
 
 ### Redux->React
 
@@ -34,8 +34,8 @@
 
      ```js
      const instructors = useSelector((state)=>Object.values(state.puppies)
-
-     //[{id:1, name:"Mylo},{id:2,name:"Nish"}]
+       //double check for expected results
+       //console.log(instructors) [{id:1, name:"Mylo},{id:2,name:"Nish"}]
      ```
 
 3. Render initial state
@@ -62,7 +62,7 @@
 
       ```js
       const thunkName = (var1, var2) => async(dispatch) => {
-        const res = await fetch('/api/route/to/backend)
+        const res = await fetch('/api/route/to/backend')
       }
       ```
 
@@ -77,10 +77,20 @@
 
 ### Redux->Internal state change->React
 
-1. Parse the JSON given from the backend, and double check to make sure
-   it's what you expected.
-2. _Plan_ the name of and dispatch an ActionCreator passing in the 
+1. Return to your ThunkActionCreatorParse the JSON given from the backend,
+   and double check to make sure it's what you expected.
+2. _Plan_ the name of and dispatch an ActionCreator passing in the
    information received from the database.
+   - Final ThunkActionCreator syntax example
+
+   ```js
+      const thunkName = (var1, var2) => async(dispatch) => {
+        const res = await fetch('/api/route/to/backend')
+        const data = await res.json() //double-check for expected results
+        dispatch(actionCreatorName(data))
+      }
+      ```
+
 3. Write the ActionCreator planned in the previous step, _plan_ the
    ActionType name, and assign the data from the back and the payload.
 4. Write the ActionType planned in the previous step.
