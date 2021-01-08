@@ -47,21 +47,4 @@
 
     ```
 
-5. Review the app's structure and follow the [Dataflow Cheat Sheet](https://github.com/mylo-james/dataflow-cheatsheet/wiki)
-
-## Dataflow IMG
-
-![dataflow](./dataflow.png)
-
-1. Write your initial state
-2. Import useSelector from 'react-redux'
-3. Initialize useSelector
-4. Render information from the store
-5. In the handleClick, dispatch a thunk `(TBD)`
-6. Import and initialize useDispatch from 'react-redux'
-7. Define a thunk to hit a backend route `(TBD)`
-8. Define a backend route to query the backend
-9. Dispatch an action creator `(TBD)` passing the info from the backend
-10. Define the action creator with action definition `(TBD)`
-11. Define the action definition
-12. Write the case for the userReducer
+5. Go to [the instructions](./instructions.md)

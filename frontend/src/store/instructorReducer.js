@@ -29,6 +29,7 @@ const initState = {};
     2. Returns newState                                                  TODO */
 
 const instructorsReducer = (state = initState, action) => {
+    // eslint-disable-next-line no-unused-vars
     const newState = Object.assign({}, state);
     switch (action.type) {
         default:
