@@ -1,30 +1,25 @@
-import { useEffect, useRef } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { getUsersByInstructor } from '../store/userReducer';
-
 function UserTable() {
-    const dispatch = useDispatch();
-    const table = useRef();
-    const instructorId = Number.parseInt(useParams().instructorId);
-    const users = useSelector(({ users }) =>
-        Object.values(users).filter(
-            (user) => user.instructorId === instructorId
-        )
-    );
+    /* Assign the instructor's id, taken from the path using
+       useParams, to a variable called instructorId. 
+       Make sure to parse this parameter into an integer.
+       Add this as a 'key' to the div with the 
+       className='tableWrapper'                                          TODO */
 
-    useEffect(() => {
-        dispatch(getUsersByInstructor(instructorId)).then(() =>
-            table.current.classList.add('animation')
-        );
-    }, [dispatch, instructorId]);
+    /* Create a selector that..
+    1. Assigns to a variable called users.
+    2. Gets the users from store using useSelector
+    3. Iterates over all of the user objects' values to 
+       produce an array of users.
+    4. Filters those users to show only users that have
+       an instructorId equal to what was take from the path.             TODO */
+
+    /* Create a useEffect that dispatches the ThunkActionCreator 
+       "getUsersByInstructor". This should watch for when 
+       instructorId changes. Be sure to import useDispatch and add 
+       it to your dependency array.                                      TODO */
 
     return (
-        <div
-            ref={table}
-            key={`instructorTable-${instructorId}`}
-            className='tableWrapper'
-        >
+        <div className='tableWrapper'>
             <table>
                 <tbody>
                     <tr>
@@ -33,30 +28,19 @@ function UserTable() {
                         <th>Live Link</th>
                         <th>Repo Link</th>
                     </tr>
-                    {users &&
-                        users.map(
-                            ({ name, id, projectName, liveLink, repoLink }) => (
-                                <tr key={`userId-${id}`}>
-                                    <td>{name}</td>
-
-                                    <td>{projectName ? projectName : 'TBD'}</td>
-                                    <td>
-                                        {liveLink ? (
-                                            <a href={liveLink}>Live Link</a>
-                                        ) : (
-                                            'TBD'
-                                        )}
-                                    </td>
-                                    <td>
-                                        {repoLink ? (
-                                            <a href={repoLink}>Live Link</a>
-                                        ) : (
-                                            'TBD'
-                                        )}
-                                    </td>
-                                </tr>
-                            )
-                        )}
+                    {/* If there are users, for each user...
+                        1. Create a table row
+                           a. with a key of the user's id
+                        2. Create table data for the user's name.
+                        3. If the user has a projectName,
+                           display projectName, otherwise display
+                           "TBD".
+                        4. If the user has a liveLink,
+                           display liveLink, otherwise display
+                           "TBD".
+                        5. If the user has a repoLink,
+                           display repoLink, otherwise display
+                           "TBD".                                       TODO */}
                 </tbody>
             </table>
         </div>

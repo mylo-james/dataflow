@@ -1,18 +1,21 @@
 // ActionTypes
-/* Create an ActionType called SET_USERS                                 TODO */
+/* Create an ActionType called 'SET_USERS'                               TODO */
 
 //ActionCreators
-/* Create an ActionCreator called setUsers with a type of SET_USERS      TODO */
+/* Create an ActionCreator called 'setUsers' with a type of 
+   'SET_USERS' and a payload of the data from
+   your API.                                                             TODO */
 
 //ThunkActionCreators
-/* Create an ThunkActionCreator called getUsersByInstructor that 
-     1. Intakes an Instructor's id,
-     2. Makes a fetch to '/api/groups/:id'
-     3. Parses the response
-     4. Dispatches the ActionCreator 'setUsers' passing in the users
-        from the API                                                     TODO */
+/* Create and export a ThunkActionCreator called 
+   getUsersByInstructor that...
+      1. Intakes an Instructor's id,
+      2. Makes a fetch to '/api/groups/:id'
+      3. Parses the data from the response
+      4. Dispatches the ActionCreator 'setUsers' 
+         passing in the data from your API                               TODO */
 
-// Define an initial state
+// Initial state
 /* Define your initial state. You are going to be using normalized state
    meaning that you will have an object that has id's as keys, and the 
    the data as values.                                                   TODO */

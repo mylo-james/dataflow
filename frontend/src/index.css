@@ -77,9 +77,6 @@ td {
 table {
     min-width: 450px;
     width: 100%;
-}
-
-.animation {
     animation: fadeIn 0.5s linear forwards;
 }
 
