@@ -1,63 +1,11 @@
 'use strict';
 const faker = require('faker');
-const names = [
-    'Adam Faidy',
-    'Adam Jacobson',
-    'Ahdari Scott',
-    'Ameera Gates',
-    'Andrew Dotterer',
-    'Angelica Wilson',
-    'Anna Bullard',
-    'Arianna Johnson',
-    'Arjun Narain',
-    'Autumn Wiggins',
-    'Barry Mattern',
-    'Bryant Klein',
-    'Chad Calcote',
-    'Chris Read',
-    'Chris Clark',
-    'Chris Sorini',
-    'River Cha',
-    'Dak Benger',
-    'Dan Chin',
-    'Daniel Miller',
-    'Jimmy Sherrod',
-    'Derek Nungesser',
-    'Dez Adkins',
-    'Elyse Steingold',
-    'Erick Bravo',
-    'Giiaga Agha',
-    'Greg Gardini',
-    'Jacob Premo',
-    'James Monaco',
-    'Jerzy Horst',
-    'Joe Alves',
-    'JM Summers',
-    'Jummy Park',
-    'Ashley Gant',
-    'Kimi Zou',
-    'Kristen Florey',
-    'Lane Smit',
-    'Mike Jensen',
-    'Michael Sanford',
-    'Mishe Yi',
-    'Mustafa Mousa',
-    'Nhu-Y Phan',
-    'Nick Bierman',
-    "Nichole O'Brien",
-    'Nick Menon',
-    'Ramses Romero',
-    'Rihana Chang',
-    'Ryan Webster',
-    'Safiya Cain',
-    'Sami Butler',
-    'Samuel Nunn',
-    'Seth Witfoth',
-    'Tanner Schmutte',
-    'Thanh Nguyen',
-    'Tony Ngo',
-    'Ty Newman',
-];
+
+const names = [];
+
+for (let i = 0; i < 52; i++) {
+    names.push(faker.name.findName());
+}
 
 const { instructors } = require('./20201201170421-instructors');
 
