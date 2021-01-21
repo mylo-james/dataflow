@@ -7,6 +7,7 @@ const instructors = [
     { id: 4, name: 'Ryan' },
     { id: 5, name: 'Nish' },
     { id: 6, name: 'Mylo' },
+    { id: 7, name: 'Geoffery' },
 ];
 
 module.exports = {
