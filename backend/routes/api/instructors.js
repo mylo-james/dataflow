@@ -1,4 +1,4 @@
-const router = require('express').Router;
+const router = require('express').Router();
 
 /* Write an  get route to '/' that...
     1. Uses the asyncHandler middleware from 'express-async-handler'

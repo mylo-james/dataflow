@@ -3,7 +3,7 @@ const router = require('express').Router();
 const groupRoutes = require('./groups');
 const instructorRoutes = require('./instructors');
 
-router.use('./groups', groupRoutes);
-router.use('./instructors', instructorRoutes);
+router.use('/groups', groupRoutes);
+router.use('/instructors', instructorRoutes);
 
 module.exports = router;
