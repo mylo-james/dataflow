@@ -1,23 +1,25 @@
 // ActionTypes
-/* Create an ActionType called SET_INSTRUCTORS                           TODO */
+/* Create an ActionType called SET_INSTRUCTORS                         TODO 9 */
 
 //ActionCreators
 /* Create an ActionCreator called setInstructor with a type 
    of SET_INSTRUCTORS and a payload of the data from
-   your API.                                                             TODO */
+   your API.                                                           TODO 8 */
 
 //ThunkActionCreators
-/* Create and export a ThunkActionCreator called 
+/* Begin writing and export a ThunkActionCreator called 
    getInstructors that...
-      1. Makes a fetch to '/api/instructors'
-      2. Parses the data from the response
-      3. Dispatches the ActionCreator 'setInstructors' 
-        passing in the data from your API                                TODO */
+      1. Makes a fetch to '/api/instructors'                           TODO 5 */
+
+/* Finish writing the getInstructors ThunkActionCreator that...
+      1. Parses the data from the response
+      2. Dispatches the ActionCreator 'setInstructors' 
+        passing in the data from your API                              TODO 7 */
 
 // Initial state
 /* Define your initial state. You are going to be using normalized state
    meaning that you will have an object that has id's as keys, and the 
-   the data as values.                                                   TODO */
+   the data as values.                                                 TODO 1 */
 const initState = {};
 
 //Reducer
@@ -26,7 +28,7 @@ const initState = {};
     1. Iterates over the instructors and adds a key value pair to newState
         a. key - the instructor's id
         b. value - the instructor object
-    2. Returns newState                                                  TODO */
+    2. Returns newState                                               TODO 10 */
 
 const instructorsReducer = (state = initState, action) => {
     // eslint-disable-next-line no-unused-vars

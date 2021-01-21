@@ -3,7 +3,7 @@ function UserTable() {
        useParams, to a variable called instructorId. 
        Make sure to parse this parameter into an integer.
        Add this as a 'key' to the div with the 
-       className='tableWrapper'                                          TODO */
+       className='tableWrapper'                                      TODO 2.5 */
 
     /* Create a selector that..
     1. Assigns to a variable called users.
@@ -11,12 +11,12 @@ function UserTable() {
     3. Iterates over all of the user objects' values to 
        produce an array of users.
     4. Filters those users to show only users that have
-       an instructorId equal to what was take from the path.             TODO */
+       an instructorId equal to what was take from the path.           TODO 2 */
 
     /* Create a useEffect that dispatches the ThunkActionCreator 
        "getUsersByInstructor". This should watch for when 
        instructorId changes. Be sure to import useDispatch and add 
-       it to your dependency array.                                      TODO */
+       it to your dependency array.                                    TODO 4 */
 
     return (
         <div className='tableWrapper'>
@@ -40,7 +40,7 @@ function UserTable() {
                            "TBD".
                         5. If the user has a repoLink,
                            display repoLink, otherwise display
-                           "TBD".                                       TODO */}
+                           "TBD".                                     TODO 3 */}
                 </tbody>
             </table>
         </div>

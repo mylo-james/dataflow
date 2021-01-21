@@ -52,7 +52,7 @@ Step 4. Dispatch a ThunkActionCreator to kick off the cycle to get
 
 ## Redux->Express/Postgres
 
-Step 5. Begin writing the ThunkActionCreator planned in *Redux-React* step 4
+Step 5. Begin writing the ThunkActionCreator planned in step 4.
 
 - Make sure the variables passed in from the React component
     are what you're expecting.
@@ -69,7 +69,7 @@ const res = await fetch('/api/route/to/backend')
 
 ## Express/Postgres->Redux
 
-Step 6. Define the route planned in *Redux->Express* step 1.
+Step 6. Define the route planned in step 5.
 
 - Make sure that the params/body are what you expected
 - Query the database for the information needed.
@@ -77,11 +77,11 @@ Step 6. Define the route planned in *Redux->Express* step 1.
 
 ## Redux->Internal state change->React
 
-Step 7. Return to your ThunkActionCreatorParse the JSON given from the backend,
-and double check to make sure it's what you expected.
-    - _Plan_ the name of and dispatch an ActionCreator passing in the
-    information received from the database.
-    - Final ThunkActionCreator syntax example:
+Step 7. Return to your ThunkActionCreator and Parse the JSON given from the backend. Double check to make sure it's what you expected.
+
+- _Plan_ the name of and dispatch an ActionCreator passing in the
+information received from the database.
+- Final ThunkActionCreator syntax example:
 
 ```js
 const thunkName = (var1, var2) => async(dispatch) => {
@@ -91,8 +91,8 @@ const thunkName = (var1, var2) => async(dispatch) => {
 }
 ```
 
-Step 8. Write the ActionCreator planned in the previous step, _plan_ the
-   ActionType name, and assign the data from the back and the payload.
+Step 8. Write the ActionCreator planned in the previous step, _plan_ the ActionType name, and assign the data from the back and the payload.
+
 Step 9. Write the ActionType planned in the previous step.
 
 Step 10. Create a case in your reducer for the ActionType written in the previous step.

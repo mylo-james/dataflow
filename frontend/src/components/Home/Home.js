@@ -6,11 +6,11 @@ const Home = () => {
     1. Assigns to a variable called instructors.
     2. Gets the instructors from store using useSelector
     3. Iterates over all of the instructor objects' values to 
-       produce an array of instructors.                                  TODO */
+       produce an array of instructors.                                TODO 2 */
 
     /* Create a useEffect that dispatches the ThunkActionCreator 
        "getInstructors" when the component mounts, be sure to
-       import useDispatch and add it to your dependency array.           TODO */
+       import useDispatch and add it to your dependency array.         TODO 4 */
 
     return (
         <div className='home'>
@@ -21,7 +21,7 @@ const Home = () => {
                        b. Has an 'id' prop of the instructor's id
                        c. Redirects the user to '/groups/${id}, ${id} 
                           being the instructor's id.
-                       d. Display's the instructor's name               TODO */}
+                       d. Display's the instructor's name             TODO 3 */}
             </div>
             <Route path='/groups/:instructorId'>
                 <UserTable />
