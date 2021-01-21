@@ -2,7 +2,7 @@
 
 ## Dataflow Graphic
 
-[Dataflow Cheat Sheet](update/to/graphic)
+[Dataflow Cheat Sheet](https://www.figma.com/file/AHK264MHy58rkDXIGRBlqn/Dataflow?node-id=0%3A1)
 
 ### Redux->React
 
