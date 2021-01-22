@@ -33,7 +33,7 @@ what you need it to look like for the render.
 - Example of useSelector syntax with normalized state.
 
 ```js
-const instructors = useSelector((state)=>Object.values(state.puppies)
+const instructors = useSelector((state)=>Object.values(state.instructors)
 //double check for expected results
 //console.log(instructors) [{id:1, name:"Mylo},{id:2,name:"Nish"}]
 ```

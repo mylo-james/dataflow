@@ -20,7 +20,16 @@
 /* Define your initial state. You are going to be using normalized state
    meaning that you will have an object that has id's as keys, and the 
    the data as values.                                                 TODO 1 */
-const initState = {};
+const initState = {
+    1: {
+        id: 1,
+        name: 'Mylo',
+    },
+    2: {
+        id: 2,
+        name: 'Nish',
+    },
+};
 
 //Reducer
 /* Add a case to instructorReducer that looks for the action.type 

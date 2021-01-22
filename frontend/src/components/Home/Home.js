@@ -1,4 +1,5 @@
-import { Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { Route, NavLink } from 'react-router-dom';
 import UserTable from '../UserTable';
 
 const Home = () => {
@@ -7,6 +8,10 @@ const Home = () => {
     2. Gets the instructors from store using useSelector
     3. Iterates over all of the instructor objects' values to 
        produce an array of instructors.                                TODO 2 */
+    const instructors = useSelector((state) =>
+        Object.values(state.instructors)
+    );
+    console.log(instructors);
 
     /* Create a useEffect that dispatches the ThunkActionCreator 
        "getInstructors" when the component mounts, be sure to
@@ -22,6 +27,15 @@ const Home = () => {
                        c. Redirects the user to '/groups/${id}, ${id} 
                           being the instructor's id.
                        d. Display's the instructor's name             TODO 3 */}
+                {instructors.map((instructor) => (
+                    <NavLink
+                        key={instructor.id}
+                        id={instructor.id}
+                        to={`/groups/${instructor.id}`}
+                    >
+                        {instructor.name}
+                    </NavLink>
+                ))}
             </div>
             <Route path='/groups/:instructorId'>
                 <UserTable />
