@@ -10,6 +10,9 @@
 /* Begin writing and export a ThunkActionCreator called 
    getInstructors that...
       1. Makes a fetch to '/api/instructors'                           TODO 5 */
+export const getInstructors = () => async (dispatch) => {
+    const res = await fetch('/api/instructors');
+};
 
 /* Finish writing the getInstructors ThunkActionCreator that...
       1. Parses the data from the response

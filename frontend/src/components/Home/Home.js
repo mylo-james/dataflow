@@ -1,32 +1,26 @@
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Route, NavLink } from 'react-router-dom';
 import UserTable from '../UserTable';
+import { getInstructors } from '../../store/instructorReducer';
 
 const Home = () => {
-    /* Create a selector that..
-    1. Assigns to a variable called instructors.
-    2. Gets the instructors from store using useSelector
-    3. Iterates over all of the instructor objects' values to 
-       produce an array of instructors.                                TODO 2 */
+    const dispatch = useDispatch();
     const instructors = useSelector((state) =>
         Object.values(state.instructors)
     );
-    console.log(instructors);
 
     /* Create a useEffect that dispatches the ThunkActionCreator 
        "getInstructors" when the component mounts, be sure to
        import useDispatch and add it to your dependency array.         TODO 4 */
 
+    useEffect(() => {
+        dispatch(getInstructors());
+    }, [dispatch]);
+
     return (
         <div className='home'>
             <div className='buttons'>
-                {/* Map over the instructors. For each instructor...
-                    1. Create a NavLink that
-                       a. Has a 'key' prop of the instructor's id
-                       b. Has an 'id' prop of the instructor's id
-                       c. Redirects the user to '/groups/${id}, ${id} 
-                          being the instructor's id.
-                       d. Display's the instructor's name             TODO 3 */}
                 {instructors.map((instructor) => (
                     <NavLink
                         key={instructor.id}
