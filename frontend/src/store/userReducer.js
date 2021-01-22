@@ -11,6 +11,7 @@
    getUsersByInstructor that...
       1. Intakes an Instructor's id,
       2. Makes a fetch to '/api/groups/:id'                            TODO 5 */
+export const getUsersByInstructor = (instructorId) => async (dispatch) => {};
 /* Finish the ThunkActionCreator called etUsersByInstructor that...
       3. Parses the data from the response
       4. Dispatches the ActionCreator 'setUsers' passing in the data 
@@ -21,7 +22,16 @@
    meaning that you will have an object that has id's as keys, and the 
    the data as values.                                                 TODO 1 */
 
-const initState = {};
+const initState = {
+    1: {
+        id: 1,
+        name: 'Jeff',
+        instructorId: 1,
+        projectName: 'CoolProject',
+        liveLink: 'http://live.com',
+        repoLink: 'http://repo.com',
+    },
+};
 
 //Reducer
 /* Add a case to userReducer that looks for the action.type 

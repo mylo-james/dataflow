@@ -1,25 +1,27 @@
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { getUsersByInstructor } from '../store/userReducer';
 function UserTable() {
-    /* Assign the instructor's id, taken from the path using
-       useParams, to a variable called instructorId. 
-       Make sure to parse this parameter into an integer.
-       Add this as a 'key' to the div with the 
-       className='tableWrapper'                                      TODO 2.5 */
+    const instructorId = Number.parseInt(useParams().instructorId);
+    const dispatch = useDispatch();
 
-    /* Create a selector that..
-    1. Assigns to a variable called users.
-    2. Gets the users from store using useSelector
-    3. Iterates over all of the user objects' values to 
-       produce an array of users.
-    4. Filters those users to show only users that have
-       an instructorId equal to what was take from the path.           TODO 2 */
+    const users = useSelector(({ users }) =>
+        Object.values(users).filter(
+            (user) => user.instructorId === instructorId
+        )
+    );
 
     /* Create a useEffect that dispatches the ThunkActionCreator 
        "getUsersByInstructor". This should watch for when 
        instructorId changes. Be sure to import useDispatch and add 
        it to your dependency array.                                    TODO 4 */
+    useEffect(() => {
+        dispatch(getUsersByInstructor(instructorId));
+    }, [instructorId, dispatch]);
 
     return (
-        <div className='tableWrapper'>
+        <div className='tableWrapper' key={instructorId}>
             <table>
                 <tbody>
                     <tr>
@@ -41,6 +43,19 @@ function UserTable() {
                         5. If the user has a repoLink,
                            display repoLink, otherwise display
                            "TBD".                                     TODO 3 */}
+                    {users &&
+                        users.map((user) => (
+                            <tr key={user.id}>
+                                <td>{user.name}</td>
+                                <td>
+                                    {user.projectName
+                                        ? user.projectName
+                                        : 'TBD'}
+                                </td>
+                                <td>{user.liveLink ? user.liveLink : 'TBD'}</td>
+                                <td>{user.repoLink ? user.repoLink : 'TBD'}</td>
+                            </tr>
+                        ))}
                 </tbody>
             </table>
         </div>
