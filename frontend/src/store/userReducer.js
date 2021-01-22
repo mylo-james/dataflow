@@ -10,8 +10,10 @@
 /* Begin and export a ThunkActionCreator called 
    getUsersByInstructor that...
       1. Intakes an Instructor's id,
-      2. Makes a fetch to '/api/groups/:id'                            TODO 5 */
-export const getUsersByInstructor = (instructorId) => async (dispatch) => {};
+      2. Makes a fetch to '/api/groups/'                            TODO 5 */
+export const getUsers = () => async (dispatch) => {
+    const res = await fetch('/api/groups')
+};
 /* Finish the ThunkActionCreator called etUsersByInstructor that...
       3. Parses the data from the response
       4. Dispatches the ActionCreator 'setUsers' passing in the data 

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getUsersByInstructor } from '../store/userReducer';
+import { getUsers } from '../store/userReducer';
 function UserTable() {
     const instructorId = Number.parseInt(useParams().instructorId);
     const dispatch = useDispatch();
@@ -13,12 +13,12 @@ function UserTable() {
     );
 
     /* Create a useEffect that dispatches the ThunkActionCreator 
-       "getUsersByInstructor". This should watch for when 
+       "getUsers". This should watch for when 
        instructorId changes. Be sure to import useDispatch and add 
        it to your dependency array.                                    TODO 4 */
     useEffect(() => {
-        dispatch(getUsersByInstructor(instructorId));
-    }, [instructorId, dispatch]);
+        dispatch(getUsers());
+    }, [dispatch]);
 
     return (
         <div className='tableWrapper' key={instructorId}>
