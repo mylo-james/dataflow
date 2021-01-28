@@ -1,6 +1,7 @@
 // ActionTypes
 /* Create an ActionType called 'SET_USERS'                             TODO 9 */
 const SET_USERS = 'users/SET_USERS';
+const SET_USER = 'users/SET_USER';
 //ActionCreators
 /* Create an ActionCreator called 'setUsers' with a type of 
    'SET_USERS' and a payload of the data from
@@ -10,7 +11,20 @@ const setUsers = (payload) => ({
     payload,
 });
 
+const setUser = (payload) => ({
+    type: SET_USER,
+    payload,
+});
+
 //ThunkActionCreators
+export const getUserById = (userId) => async (dispatch) => {
+    const response = await fetch(`/api/users/${userId}`);
+    if (response.ok) {
+        const user = await response.json();
+        dispatch(setUser(user));
+        return user;
+    }
+};
 /* Begin and export a ThunkActionCreator called 
    getUsersByInstructor that...
       1. Intakes an Instructor's id,
@@ -33,8 +47,7 @@ export const getUsers = () => async (dispatch) => {
    meaning that you will have an object that has id's as keys, and the 
    the data as values.                                                 TODO 1 */
 
-const initState = {
-};
+const initState = {};
 
 //Reducer
 /* Add a case to userReducer that looks for the action.type 
@@ -52,6 +65,9 @@ const userReducer = (state = initState, action) => {
             for (let user of action.payload) {
                 newState[user.id] = user;
             }
+            return newState;
+        case SET_USER:
+            newState[action.payload.id] = action.payload;
             return newState;
         default:
             return state;

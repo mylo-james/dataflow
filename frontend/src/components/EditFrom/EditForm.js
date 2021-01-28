@@ -1,11 +1,29 @@
-import { useState } from 'react';
-
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { getUserById } from '../../store/userReducer';
 function EditForm() {
-    const [name, setName] = useState('');
-    const [projectName, setProjectName] = useState('');
-    const [liveLink, setLiveLink] = useState('');
-    const [repoLink, setRepoLink] = useState('');
-    
+    const { userId } = useParams();
+    const dispatch = useDispatch();
+    // console.log(userId);
+    const user = useSelector((state) => state.users[userId]);
+    // console.log(user);
+    const [name, setName] = useState(user ? user.name : '');
+    const [projectName, setProjectName] = useState(
+        user ? user.projectName : ''
+    );
+    const [liveLink, setLiveLink] = useState(user ? user.liveLink : '');
+    const [repoLink, setRepoLink] = useState(user ? user.repoLink : '');
+
+    useEffect(() => {
+        dispatch(getUserById(userId)).then((user) => {
+            setName(user.name);
+            setProjectName(user.projectName);
+            setLiveLink(user.liveLink);
+            setRepoLink(user.repoLink);
+        });
+    }, [dispatch, userId]);
+
     return (
         <div>
             <h1>Edit User</h1>
