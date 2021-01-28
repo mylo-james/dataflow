@@ -8,21 +8,23 @@ function EditForm() {
     // console.log(userId);
     const user = useSelector((state) => state.users[userId]);
     // console.log(user);
-    const [name, setName] = useState(user ? user.name : '');
-    const [projectName, setProjectName] = useState(
-        user ? user.projectName : ''
-    );
-    const [liveLink, setLiveLink] = useState(user ? user.liveLink : '');
-    const [repoLink, setRepoLink] = useState(user ? user.repoLink : '');
+    const [name, setName] = useState('');
+    const [projectName, setProjectName] = useState('');
+    const [liveLink, setLiveLink] = useState('');
+    const [repoLink, setRepoLink] = useState('');
 
     useEffect(() => {
-        dispatch(getUserById(userId)).then((user) => {
-            setName(user.name);
-            setProjectName(user.projectName);
-            setLiveLink(user.liveLink);
-            setRepoLink(user.repoLink);
-        });
+        dispatch(getUserById(userId));
     }, [dispatch, userId]);
+
+    useEffect(() => {
+        if (user) {
+            setName(user.name);
+            setProjectName(user.projectName || '');
+            setLiveLink(user.liveLink || '');
+            setRepoLink(user.repoLink || '');
+        }
+    }, [user]);
 
     return (
         <div>
