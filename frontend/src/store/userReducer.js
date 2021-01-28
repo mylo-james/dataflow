@@ -34,14 +34,6 @@ export const getUsers = () => async (dispatch) => {
    the data as values.                                                 TODO 1 */
 
 const initState = {
-    1: {
-        id: 1,
-        name: 'Jeff',
-        instructorId: 1,
-        projectName: 'CoolProject',
-        liveLink: 'http://live.com',
-        repoLink: 'http://repo.com',
-    },
 };
 
 //Reducer

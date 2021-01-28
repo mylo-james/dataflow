@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { getUsers } from '../store/userReducer';
 function UserTable() {
     const instructorId = Number.parseInt(useParams().instructorId);
@@ -46,7 +46,9 @@ function UserTable() {
                     {users &&
                         users.map((user) => (
                             <tr key={user.id}>
-                                <td>{user.name}</td>
+                                <td>
+                                    <Link to={`/edit/${user.id}`}>{user.name}</Link>
+                                </td>
                                 <td>
                                     {user.projectName
                                         ? user.projectName
